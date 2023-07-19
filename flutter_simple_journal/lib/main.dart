@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webapi_first_course/models/journal.dart';
+import 'package:flutter_webapi_first_course/models/journal_model.dart';
 import 'package:flutter_webapi_first_course/screens/add_journal_screen/add_journal_screen.dart';
 import 'package:flutter_webapi_first_course/services/journal_service.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,11 +9,12 @@ void main() {
   runApp(const MyApp());
 
   JournalService service = JournalService();
-  service.register("Olá Mundo");
+  service.register(Journal.empty());
   //service.get();
 }
 
 // json-server --watch --host 192.168.0.3 db.json
+// json-server --watch --host 192.168.1.184 db.json
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

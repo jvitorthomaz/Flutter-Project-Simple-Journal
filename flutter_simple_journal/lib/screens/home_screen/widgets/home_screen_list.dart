@@ -1,4 +1,4 @@
-import '../../../models/journal.dart';
+import '../../../models/journal_model.dart';
 import 'journal_card.dart';
 
 List<JournalCard> generateListJournalCards(

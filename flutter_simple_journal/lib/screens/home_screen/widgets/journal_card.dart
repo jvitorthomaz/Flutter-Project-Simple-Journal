@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webapi_first_course/helpers/weekday.dart';
-import 'package:flutter_webapi_first_course/models/journal.dart';
+import 'package:flutter_webapi_first_course/models/journal_model.dart';
 import 'package:uuid/uuid.dart';
 
 class JournalCard extends StatelessWidget {
@@ -98,7 +98,6 @@ class JournalCard extends StatelessWidget {
   }
 
   callAddJournalScreen(BuildContext context){
-    print("FUNCIONOU!");
     Navigator.pushNamed(context, 'add-journal',
       arguments: Journal(
         id: const Uuid().v1(),
@@ -106,6 +105,12 @@ class JournalCard extends StatelessWidget {
         createdAt: showedDate,
         updatedAt: showedDate
       )
-    );
+    ).then((value) {
+      if(value != null && value == true){
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Registro feito com sucesso! :)")),
+        );
+      }
+    });
   }
 }
