@@ -9,8 +9,8 @@ void main() {
   runApp(const MyApp());
 
   JournalService service = JournalService();
-  service.register(Journal.empty());
-  //service.get();
+  //service.register(Journal.empty());
+  service.getAll();
 }
 
 // json-server --watch --host 192.168.0.3 db.json

@@ -10,40 +10,28 @@
       "updated_at": "2023-07-18 22:40:43.891110"
     },
     {
-      "id": "7ba14660-25d6-11ee-8d22-1fb0f71d21ce",
-      "content": "",
-      "created_at": "2023-07-18 22:49:22.247316",
-      "updated_at": "2023-07-18 22:49:22.247317"
+      "id": "302e5d90-269d-11ee-a44b-853a64746f4d",
+      "content": "Hoje é qarta-feira",
+      "created_at": "2023-07-19 22:31:30.544948",
+      "updated_at": "2023-07-19 22:31:30.544948"
     },
     {
-      "id": "80e27d60-25d6-11ee-8d22-1fb0f71d21ce",
-      "content": "Sábado é dia de descansar um pouco!",
-      "created_at": "2023-07-08 22:49:22.468546",
-      "updated_at": "2023-07-08 22:49:22.468546"
+      "id": "c1d61640-26a0-11ee-8dba-1f415fc85fa2",
+      "content": "domingo teste entrada",
+      "created_at": "2023-07-16 22:57:00.321373",
+      "updated_at": "2023-07-16 22:57:00.321373"
     },
     {
-      "id": "be8f8590-25d6-11ee-b793-c13cc48e3409",
-      "content": "",
-      "created_at": "2023-07-18 22:51:14.538073",
-      "updated_at": "2023-07-18 22:51:14.538074"
+      "id": "6c86d570-26a1-11ee-b762-253f757a2de2",
+      "content": "entrada domingo, dia 09",
+      "created_at": "2023-07-09 23:02:01.610658",
+      "updated_at": "2023-07-09 23:02:01.610658"
     },
     {
-      "id": "c9fa57c0-25d6-11ee-b793-c13cc48e3409",
-      "content": "teste navegação",
-      "created_at": "2023-07-09 22:51:14.754110",
-      "updated_at": "2023-07-09 22:51:14.754110"
-    },
-    {
-      "id": "86e97ff0-25d7-11ee-89ed-0f001903cfca",
-      "content": "",
-      "created_at": "2023-07-18 22:56:50.672659",
-      "updated_at": "2023-07-18 22:56:50.672659"
-    },
-    {
-      "id": "88109ad0-25d7-11ee-89ed-0f001903cfca",
-      "content": "teste snackbar",
-      "created_at": "2023-07-10 22:56:50.893727",
-      "updated_at": "2023-07-10 22:56:50.893727"
+      "id": "c7de7860-26a1-11ee-8fef-eb093c5f82fa",
+      "content": "Entrada segunda, dia 10.",
+      "created_at": "2023-07-10 23:04:34.615714",
+      "updated_at": "2023-07-10 23:04:34.615714"
     }
   ]
 }
