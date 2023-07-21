@@ -14,7 +14,7 @@ void main() {
 }
 
 // json-server --watch --host 192.168.0.3 db.json
-// json-server --watch --host 192.168.1.184 db.json
+// json-server --watch --host 192.168.0.2 db.json
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -55,6 +55,7 @@ class MyApp extends StatelessWidget {
             return AddJournalScreen(journal: journal,);
           });
         }
+        return null;
       },
     );
   }

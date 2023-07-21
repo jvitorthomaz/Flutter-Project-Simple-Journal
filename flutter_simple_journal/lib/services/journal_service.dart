@@ -7,7 +7,7 @@ import 'package:http_interceptor/http_interceptor.dart';
 import '../models/journal_model.dart';
 
 class JournalService {
-  static const String url = "http://192.168.1.184:3000/"; //http://192.168.0.3:3000/";
+  static const String url = "http://192.168.0.2:3000/"; //"http://192.168.1.184:3000/"; "http://192.168.0.3:3000/";
   static const String resource = "journals/";
 
   http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
@@ -32,7 +32,7 @@ class JournalService {
       return true;
 
     } else{
-      print(response.statusCode);
+     // print(response.statusCode);
       return false;
     }
   }
@@ -50,14 +50,14 @@ class JournalService {
       list.add(Journal.fromMap(jsonMap));
     }
 
-    print(list.length);
+    //print(list.length);
 
     return list;
   }
 
   Future<String> get() async{
     http.Response response = await client.get(Uri.parse(getUrl()));
-    print(response.body);
+    //print(response.body);
     return response.body;
   }
 
