@@ -4,22 +4,10 @@
   },
   "journals": [
     {
-      "id": "46aa6d20-25d5-11ee-a1df-0d1ca801ac92",
-      "content": "",
-      "created_at": "2023-07-18 22:40:43.891110",
-      "updated_at": "2023-07-18 22:40:43.891110"
-    },
-    {
       "id": "302e5d90-269d-11ee-a44b-853a64746f4d",
-      "content": "Hoje é qarta-feira",
+      "content": "Hoje é qarta-feira..",
       "created_at": "2023-07-19 22:31:30.544948",
       "updated_at": "2023-07-19 22:31:30.544948"
-    },
-    {
-      "id": "c1d61640-26a0-11ee-8dba-1f415fc85fa2",
-      "content": "domingo teste entrada",
-      "created_at": "2023-07-16 22:57:00.321373",
-      "updated_at": "2023-07-16 22:57:00.321373"
     },
     {
       "id": "6c86d570-26a1-11ee-b762-253f757a2de2",

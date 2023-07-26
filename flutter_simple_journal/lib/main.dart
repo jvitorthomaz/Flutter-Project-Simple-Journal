@@ -15,6 +15,7 @@ void main() {
 
 // json-server --watch --host 192.168.0.3 db.json
 // json-server --watch --host 192.168.0.2 db.json
+// json-server --watch --host 192.168.1.184 db.json
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -50,9 +51,15 @@ class MyApp extends StatelessWidget {
       },
       onGenerateRoute: (settings) {
         if (settings.name == "add-journal") {
-          final Journal journal = settings.arguments as Journal;
+          Map<String, dynamic> map = settings.arguments as Map<String, dynamic>;
+          final Journal journal = map ["journal"] as Journal;
+          final bool isEditing = map["is_editing"];
+
           return MaterialPageRoute(builder: (context) {
-            return AddJournalScreen(journal: journal,);
+            return AddJournalScreen(
+              journal: journal,
+              isEditing: isEditing,
+            );
           });
         }
         return null;
