@@ -4,12 +4,6 @@
   },
   "journals": [
     {
-      "id": "302e5d90-269d-11ee-a44b-853a64746f4d",
-      "content": "Hoje é qarta-feira..",
-      "created_at": "2023-07-19 22:31:30.544948",
-      "updated_at": "2023-07-19 22:31:30.544948"
-    },
-    {
       "id": "6c86d570-26a1-11ee-b762-253f757a2de2",
       "content": "entrada domingo, dia 09",
       "created_at": "2023-07-09 23:02:01.610658",
@@ -26,6 +20,18 @@
       "content": "Entrada teste. Terça feira, dia 11/07",
       "created_at": "2023-07-11 22:46:46.932574",
       "updated_at": "2023-07-11 22:46:46.932574"
+    },
+    {
+      "id": "0db81ba0-2c1c-11ee-aef9-cd7c64075778",
+      "content": "Entrada Quarta-feira, dia 26/07",
+      "created_at": "2023-07-26 22:20:30.546816",
+      "updated_at": "2023-07-26 22:20:30.546816"
+    },
+    {
+      "id": "1aad5e60-2c1c-11ee-aef9-cd7c64075778",
+      "content": "Entrada terça-feira",
+      "created_at": "2023-07-25 22:20:30.546816",
+      "updated_at": "2023-07-25 22:20:30.546816"
     }
   ]
 }
