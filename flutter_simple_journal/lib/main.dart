@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webapi_first_course/models/journal_model.dart';
 import 'package:flutter_webapi_first_course/screens/add_journal_screen/add_journal_screen.dart';
+import 'package:flutter_webapi_first_course/screens/login_screen/login_screen.dart';
 import 'package:flutter_webapi_first_course/services/journal_service.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/home_screen/home_screen.dart';
@@ -15,7 +16,7 @@ void main() {
 
 // json-server --watch --host 192.168.0.3 db.json
 // json-server --watch --host 192.168.0.2 db.json
-// json-server --watch --host 192.168.1.184 db.json
+// json-server-auth --watch --host 192.168.1.184 db.json
 
 //Feature: update and delete journal
 
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "home",
       routes: {
         "home": (context) => const HomeScreen(),
+        "login": (context) => const LoginScreen(),
         // "add-journal":(context) => AddJournalScreen(
         //     journal: Journal(
         //       id: "id",

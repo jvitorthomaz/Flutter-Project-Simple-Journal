@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "email": "josevitor@gmail.com",
+      "password": "$2a$10$qEbIoJGr6GycgVlMMvMJgeUWP8sgR1kOpAvp4ikEkg0YW78A5FM3C",
+      "id": 1
+    }
+  ],
   "leanhttp": {
     "content": "Olá Mundo"
   },
