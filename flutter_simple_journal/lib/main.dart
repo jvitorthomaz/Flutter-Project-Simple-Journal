@@ -40,10 +40,10 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
-      initialRoute: "home",
+      initialRoute: "login",
       routes: {
         "home": (context) => const HomeScreen(),
-        "login": (context) => const LoginScreen(),
+        "login": (context) =>  LoginScreen(),
         // "add-journal":(context) => AddJournalScreen(
         //     journal: Journal(
         //       id: "id",
