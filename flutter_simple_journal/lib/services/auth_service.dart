@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:http_interceptor/http/intercepted_client.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'http_interceptors.dart';
 
@@ -33,23 +34,47 @@ class AuthService {
       }
       throw HttpException(response.body);
         
-
-    } else {
-
     }
+    print('$email\n$password');
+    await saveUserInfos(response.body);
 
     return true;
   }
 
   register({required String email, required String password}) async{
     http.Response response = await client.post(
-      Uri.parse('${url}login'),
+      Uri.parse('${url}register'),
       body: {
         'email': email,
         'password': password,
       }
     );
 
+    if (response.statusCode != 201) {
+      throw HttpException(response.body);
+
+    }
+
+    await saveUserInfos(response.body);
+    
+  }
+
+  saveUserInfos(String body) async{
+    Map<String, dynamic> map = json.decode(body);
+
+    String token = map["accessToken"] ?? "";
+    String email = map["user"]["email"] ?? "";
+    int id = map["user"]["id"] ?? 0;
+
+    print("$token\n$email\n$id");
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("accessToken", token);
+    prefs.setString("email", email);
+    prefs.setInt("id", id);
+
+    String? tokenSalvo = await prefs.getString("accessToken");
+    print("=======================>$tokenSalvo");
   }
   
 }

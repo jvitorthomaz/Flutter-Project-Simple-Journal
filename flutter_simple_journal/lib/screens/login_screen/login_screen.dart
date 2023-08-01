@@ -14,13 +14,13 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       body: Container(
         //padding: const EdgeInsets.all(16),
         margin: const EdgeInsets.only(top: 35),
         decoration: BoxDecoration(
-          border: Border.all(width: 2),
-          color: Colors.white70,
+          //border: Border.all(width: 2),
+          color: Colors.white,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(8) , 
             topRight: Radius.circular(8),  
@@ -88,7 +88,7 @@ class LoginScreen extends StatelessWidget {
       print("Entrou na exception");
       showConfirmationDialog(
         context,
-        title: "Parece que você ainda não esta cadastrado! :( )",
+        title: "Parece que você ainda não esta cadastrado! :( ",
         content: "Desja criar um novo usuário com o e-mail $email e senha inserida?",
         affirmativeOption: "Criar",
       ).then((value) {
