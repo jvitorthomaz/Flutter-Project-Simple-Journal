@@ -4,6 +4,16 @@
       "email": "josevitor@gmail.com",
       "password": "$2a$10$qEbIoJGr6GycgVlMMvMJgeUWP8sgR1kOpAvp4ikEkg0YW78A5FM3C",
       "id": 1
+    },
+    {
+      "email": "jovitorthomaz2@gmail.com",
+      "password": "$2a$10$hgzLZno2o5R/Ua4/iUj7Hez8GN3M0H.GWmm5Gw9LgTSWTldrxMVQ2",
+      "id": 2
+    },
+    {
+      "email": "jovitorthomaz@gmail.com",
+      "password": "$2a$10$BHKuIMwuWqUtSykfJNE1W.vKBJF1nlXh3iAJYeAx2mxFXEMIIukYu",
+      "id": 3
     }
   ],
   "leanhttp": {
@@ -14,31 +24,36 @@
       "id": "6c86d570-26a1-11ee-b762-253f757a2de2",
       "content": "entrada domingo, dia 09",
       "created_at": "2023-07-09 23:02:01.610658",
-      "updated_at": "2023-07-09 23:02:01.610658"
+      "updated_at": "2023-07-09 23:02:01.610658",
+      "userId": 1
     },
     {
       "id": "c7de7860-26a1-11ee-8fef-eb093c5f82fa",
       "content": "Entrada segunda, dia 10.",
       "created_at": "2023-07-10 23:04:34.615714",
-      "updated_at": "2023-07-10 23:04:34.615714"
+      "updated_at": "2023-07-10 23:04:34.615714",
+      "userId": 2
     },
     {
       "id": "938baa70-2768-11ee-9cca-718f254658a2",
       "content": "Entrada teste. Terça feira, dia 11/07",
       "created_at": "2023-07-11 22:46:46.932574",
-      "updated_at": "2023-07-11 22:46:46.932574"
+      "updated_at": "2023-07-11 22:46:46.932574",
+      "userId": 3
     },
     {
       "id": "0db81ba0-2c1c-11ee-aef9-cd7c64075778",
       "content": "Entrada Quarta-feira, dia 26/07",
       "created_at": "2023-07-26 22:20:30.546816",
-      "updated_at": "2023-07-26 22:20:30.546816"
+      "updated_at": "2023-07-26 22:20:30.546816",
+      "userId": 4
     },
     {
       "id": "1aad5e60-2c1c-11ee-aef9-cd7c64075778",
       "content": "Entrada terça-feira",
       "created_at": "2023-07-25 22:20:30.546816",
-      "updated_at": "2023-07-25 22:20:30.546816"
+      "updated_at": "2023-07-25 22:20:30.546816",
+      "userId": 5
     }
   ]
 }

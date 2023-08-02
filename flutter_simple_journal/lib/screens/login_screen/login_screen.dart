@@ -83,17 +83,25 @@ class LoginScreen extends StatelessWidget {
     String password = _passwordController.text;
     
     try {
-      bool result = await service.login(email: email, password: password);
+      await service.login(email: email, password: password).then((resultLogin) {
+        if (resultLogin) {
+          Navigator.pushReplacementNamed(context, "home");
+        }
+      });
     } on UserNotFoundException {
       print("Entrou na exception");
       showConfirmationDialog(
         context,
         title: "Parece que você ainda não esta cadastrado! :( ",
         content: "Desja criar um novo usuário com o e-mail $email e senha inserida?",
-        affirmativeOption: "Criar",
+        affirmativeOption: "CRIAR",
       ).then((value) {
         if (value != null && value) {
-          service.register(email: email, password: password);
+          service.register(email: email, password: password).then((resultRegister) {
+            if (resultRegister) {
+              Navigator.pushReplacementNamed(context, "home");
+            }
+          });
         }
       });
     }
