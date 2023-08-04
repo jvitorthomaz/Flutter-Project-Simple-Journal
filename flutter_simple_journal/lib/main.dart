@@ -24,8 +24,7 @@ Future<bool> verifyToken() async{
 
 // json-server --watch --host 192.168.0.3 db.json
 // json-server --watch --host 192.168.0.2 db.json
-// json-server-auth --watch --host 192.168.1.184 db.json
-
+// json-server-auth --watch --host 192.168.0.6 db.json  192.168.0.6 192.168.1.184
 //Feature: update and delete journal
 
 class MyApp extends StatelessWidget {
