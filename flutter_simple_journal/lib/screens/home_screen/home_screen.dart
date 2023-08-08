@@ -50,6 +50,17 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              onTap: () {
+                logout();
+              }, title: const Text("Sair"), leading: const Icon(Icons.logout),
+            )
+          ],
+        )
+      ),
       body: 
       (userId != null && userToken != null) ?
       ListView(
@@ -65,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
       )
       :
       const Center(child: CircularProgressIndicator(),),
+
     );
   }
 
@@ -95,5 +107,12 @@ class _HomeScreenState extends State<HomeScreen> {
       }
     });
     
+  }
+
+  logout(){
+    SharedPreferences.getInstance().then((prefs) {
+      prefs.clear();
+      Navigator.pushReplacementNamed(context, "login");
+    });
   }
 }
