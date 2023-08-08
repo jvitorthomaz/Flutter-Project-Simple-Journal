@@ -18,6 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Tamanho da lista
   int windowPage = 10;
+  int? userId;
+  String? userToken;
 
   // A base de dados mostrada na lista
   Map<String, Journal> database = {};
@@ -25,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _listScrollController = ScrollController();
   JournalService service = JournalService();
 
+  
   @override
   void initState() {
     refresh();
@@ -47,25 +50,35 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: ListView(
+      body: 
+      (userId != null && userToken != null) ?
+      ListView(
         controller: _listScrollController,
         children: generateListJournalCards(
           windowPage: windowPage,
           currentDay: currentDay,
           database: database,
           refreshFunction: refresh,
+          userId: userId!,
+          token: userToken!,
         ),
-      ),
+      )
+      :
+      const Center(child: CircularProgressIndicator(),),
     );
   }
 
   void refresh() async {
     SharedPreferences.getInstance().then((prefs) {
-      String? token = prefs.getString("AccessToken");
+      String? token = prefs.getString("accessToken");
       String? email = prefs.getString("email");
       int? id = prefs.getInt("id");
-
+      print("=>$token\n=>$email\n=>$id");
       if (token != null && email != null && id != null) {
+        setState(() {
+          userId = id;
+          userToken = token;
+        });
 
         service.getAll(id: id.toString(), token: token).then((List<Journal> listJournal) {
           setState(() {

@@ -93,7 +93,7 @@ class LoginScreen extends StatelessWidget {
       showConfirmationDialog(
         context,
         title: "Parece que você ainda não esta cadastrado! :( ",
-        content: "Desja criar um novo usuário com o e-mail $email e senha inserida?",
+        content: "Deseja criar um novo usuário com o e-mail $email e senha inserida?",
         affirmativeOption: "CRIAR",
       ).then((value) {
         if (value != null && value) {

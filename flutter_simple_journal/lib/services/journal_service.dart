@@ -7,7 +7,7 @@ import 'package:http_interceptor/http_interceptor.dart';
 import '../models/journal_model.dart';
 
 class JournalService {
-  static const String url = "http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
+  static const String url = "http://192.168.0.2:3000/"; // "http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
   static const String resource = "journals/";
 
   http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
@@ -16,12 +16,13 @@ class JournalService {
     return "$url$resource";
   }
 
-  Future<bool> register(Journal journal) async{
+  Future<bool> register(Journal journal, String token) async{
     String jsonJournal = json.encode(journal.toMap()); 
     http.Response response = await client.post(
       Uri.parse(getUrl()), 
       headers: {
-        'Content-type' : 'application/json'
+        'Content-type' : 'application/json', 
+        "Authorization": "Bearer $token",
       },
       body: jsonJournal
     );
@@ -35,13 +36,14 @@ class JournalService {
     }
   }
 
-  Future<bool> editJournal(String id, Journal journal) async{
+  Future<bool> editJournal(String id, Journal journal, String token) async{
     String jsonJournal = json.encode(journal.toMap()); 
 
     http.Response response = await client.put(
       Uri.parse("${getUrl()}$id"), 
       headers: {
-        'Content-type' : 'application/json'
+        'Content-type' : 'application/json',
+        "Authorization": "Bearer $token",
       },
       body: jsonJournal
     );
@@ -56,12 +58,13 @@ class JournalService {
   }
 
   Future<List<Journal>> getAll({required String id, required String token}) async{
-    http.Response response = await client.get(Uri.parse("${url}/$id/journals"),
+    http.Response response = await client.get(Uri.parse("${url}users/$id/journals"),
       headers: {
         "Authorization": "Bearer $token",
       }
     );
     if (response.statusCode != 200) {
+      
       throw Exception();
     }
     List<Journal> list = [];
@@ -83,8 +86,11 @@ class JournalService {
     return response.body;
   }
 
-  Future<bool> delete(String id) async{
-    http.Response response = await http.delete(Uri.parse("${getUrl()}$id"));
+  Future<bool> delete(String id, String token) async{
+    http.Response response = await http.delete(
+      Uri.parse("${getUrl()}$id"),
+      headers: {"Authorization": "Bearer $token",},
+    );
     
     if (response.statusCode == 200) {
       return true;
