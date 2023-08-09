@@ -10,7 +10,8 @@ import 'http_interceptors.dart';
 
 class AuthService {
 
-  static const String url = "http://192.168.0.2:3000/"; //"http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
+  static const String url = "http://192.168.1.184:3000/"; 
+  //"http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
   static const String resource = "journals/";
 
   http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
@@ -75,7 +76,7 @@ class AuthService {
     prefs.setInt("id", id);
 
     String? tokenSalvo = await prefs.getString("accessToken");
-    print("=======================>$tokenSalvo");
+    print("=>$tokenSalvo");
   }
   
 }

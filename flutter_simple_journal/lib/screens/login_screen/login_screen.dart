@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_webapi_first_course/screens/defaults_dialogs/confirmation_dialog.dart';
+import 'package:flutter_webapi_first_course/screens/defaults_dialogs/exception_dialog.dart';
 
 import '../../services/auth_service.dart';
 
@@ -18,10 +21,10 @@ class LoginScreen extends StatelessWidget {
       body: Container(
         //padding: const EdgeInsets.all(16),
         margin: const EdgeInsets.only(top: 35),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           //border: Border.all(width: 2),
           color: Colors.white,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             topLeft: Radius.circular(8) , 
             topRight: Radius.circular(8),  
           ),
@@ -81,15 +84,20 @@ class LoginScreen extends StatelessWidget {
   login(BuildContext context) async{
     String email = _emailController.text;
     String password = _passwordController.text;
-    
-    try {
-      await service.login(email: email, password: password).then((resultLogin) {
+
+    await service.login(email: email, password: password).then(
+      (resultLogin) {
         if (resultLogin) {
           Navigator.pushReplacementNamed(context, "home");
         }
-      });
-    } on UserNotFoundException {
-      print("Entrou na exception");
+      },
+    ).catchError(
+      (error) {
+        var innerError = error as HttpException;
+        showExceptionDialog(context, content: innerError.message);
+      }, 
+      test: (error) => error is HttpException,
+    ).catchError((error){
       showConfirmationDialog(
         context,
         title: "Parece que você ainda não esta cadastrado! :( ",
@@ -104,7 +112,6 @@ class LoginScreen extends StatelessWidget {
           });
         }
       });
-    }
-    
+    }, test: (error) => error is UserNotFoundException);    
   }
 }
