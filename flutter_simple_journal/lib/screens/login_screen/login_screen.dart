@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -46,8 +47,6 @@ class LoginScreen extends StatelessWidget {
                       "Simple Journal",
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
-                    const Text("por Alura",
-                        style: TextStyle(fontStyle: FontStyle.italic)),
                     const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Divider(thickness: 2),
@@ -112,6 +111,10 @@ class LoginScreen extends StatelessWidget {
           });
         }
       });
-    }, test: (error) => error is UserNotFoundException);    
+    }, test: (error) => error is UserNotFoundException).catchError(
+      (error) {
+        showExceptionDialog(context, content: "O servidor não esta respondendo, tente novamente mais tarde!");
+      }, test:(error) => error is TimeoutException,
+    );    
   }
 }

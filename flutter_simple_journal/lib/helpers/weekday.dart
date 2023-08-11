@@ -1,5 +1,3 @@
-//import 'dart:html';
-
 /// Gera dia da semana em português
 class WeekDay {
   DateTime date;

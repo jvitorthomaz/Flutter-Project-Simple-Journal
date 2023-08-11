@@ -6,13 +6,16 @@ import 'package:http/http.dart' as http;
 import 'package:http_interceptor/http_interceptor.dart';
 
 import '../models/journal_model.dart';
+import 'web_client.dart';
 
 class JournalService {
-  static const String url = "http://192.168.1.184:3000/"; 
+  String url = WebClient.url;
+  http.Client client = WebClient().client;
+  //static const String url = "http://192.168.1.184:3000/"; 
   // "http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
   static const String resource = "journals/";
 
-  http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
+  //http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
 
   getUrl(){
     return "$url$resource";

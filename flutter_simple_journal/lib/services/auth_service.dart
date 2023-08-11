@@ -6,15 +6,17 @@ import 'package:http_interceptor/http/intercepted_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'http_interceptors.dart';
+import 'web_client.dart';
 
 
 class AuthService {
+  String url = WebClient.url;
+  http.Client client = WebClient().client;
+  // static const String url = "http://192.168.1.184:3000/"; 
+  // //"http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
+  // static const String resource = "journals/";
 
-  static const String url = "http://192.168.1.184:3000/"; 
-  //"http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
-  static const String resource = "journals/";
-
-  http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
+  // http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
 
   Future<bool> login({required String email, required String password}) async{
     http.Response response = await client.post(
