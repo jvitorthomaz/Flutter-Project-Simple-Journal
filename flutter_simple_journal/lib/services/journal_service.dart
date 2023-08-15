@@ -1,10 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-
-import 'package:flutter_webapi_first_course/services/http_interceptors.dart';
 import 'package:http/http.dart' as http;
-import 'package:http_interceptor/http_interceptor.dart';
-
 import '../models/journal_model.dart';
 import 'web_client.dart';
 
@@ -42,6 +38,7 @@ class JournalService {
   }
 
   Future<bool> editJournal(String id, Journal journal, String token) async{
+    journal.updatedAt = DateTime.now();
     String jsonJournal = json.encode(journal.toMap()); 
 
     http.Response response = await client.put(

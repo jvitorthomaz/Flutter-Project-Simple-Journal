@@ -2,10 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:http_interceptor/http/intercepted_client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'http_interceptors.dart';
 import 'web_client.dart';
 
 
@@ -38,7 +35,7 @@ class AuthService {
       throw HttpException(response.body);
         
     }
-    print('$email\n$password');
+    //print('$email\n$password');
     await saveUserInfos(response.body);
 
     return true;
@@ -70,15 +67,13 @@ class AuthService {
     String email = map["user"]["email"] ?? "";
     int id = map["user"]["id"] ?? 0;
 
-    print("$token\n$email\n$id");
+    //print("$token\n$email\n$id");
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("accessToken", token);
     prefs.setString("email", email);
     prefs.setInt("id", id);
-
-    String? tokenSalvo = await prefs.getString("accessToken");
-    print("=>$tokenSalvo");
+    //print("=>$tokenSalvo");
   }
   
 }

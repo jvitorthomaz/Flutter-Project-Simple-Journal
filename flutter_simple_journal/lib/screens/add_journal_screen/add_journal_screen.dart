@@ -58,7 +58,7 @@ class AddJournalScreen extends StatelessWidget {
         JournalService service = JournalService();
         if(isEditing) {
           service.editJournal(journal.id, journal, token).then((value) {
-            print("entrou na chamada de edição");
+            //print("entrou na chamada de edição");
             Navigator.pop(context, value);
           }).catchError(
             (error){
