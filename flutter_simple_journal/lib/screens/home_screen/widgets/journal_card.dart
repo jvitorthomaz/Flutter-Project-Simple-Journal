@@ -159,7 +159,6 @@ class JournalCard extends StatelessWidget {
   removeJournal(BuildContext context){
     JournalService service = JournalService();
 
-
     if (journal != null) {
       showConfirmationDialog(
         context, 

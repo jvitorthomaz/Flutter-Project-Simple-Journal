@@ -7,11 +7,7 @@ import 'web_client.dart';
 class JournalService {
   String url = WebClient.url;
   http.Client client = WebClient().client;
-  //static const String url = "http://192.168.1.184:3000/"; 
-  // "http://192.168.1.184:3000/"; //"http://192.168.0.2:3000/"; "http://192.168.0.3:3000/";
   static const String resource = "journals/";
-
-  //http.Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
 
   getUrl(){
     return "$url$resource";

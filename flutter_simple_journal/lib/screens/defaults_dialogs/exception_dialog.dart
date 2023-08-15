@@ -9,22 +9,24 @@ showExceptionDialog(
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: Row(children: [
-          const Icon(
-            Icons.warning,
-            color: Colors.brown,
-          ),
-          const SizedBox(
-            width: 8,
-          ),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 18,
+        title: Row(
+          children: [
+            const Icon(
+              Icons.warning,
               color: Colors.brown,
             ),
-          ),
-        ]),
+            const SizedBox(
+              width: 8,
+            ),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                color: Colors.brown,
+              ),
+            ),
+          ]
+        ),
         content: Text(content),
         actions: [
           TextButton(

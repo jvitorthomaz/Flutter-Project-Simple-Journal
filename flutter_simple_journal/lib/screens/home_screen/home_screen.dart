@@ -120,40 +120,4 @@ class _HomeScreenState extends State<HomeScreen> {
         showExceptionDialog(context, content: innerError.message);
     }, test: (error) => error is HttpException);
   }
-
-  // void refresh() async {
-  //   SharedPreferences.getInstance().then((prefs) {
-  //     String? token = prefs.getString("accessToken");
-  //     String? email = prefs.getString("email");
-  //     int? id = prefs.getInt("id");
-  //     print("=>$token\n=>$email\n=>$id");
-  //     if (token != null && email != null && id != null) {
-  //       setState(() {
-  //         userId = id;
-  //         userToken = token;
-  //       });
-
-  //       service.getAll(id: id.toString(), token: token).then((List<Journal> listJournal) {
-  //         setState(() {
-  //           database = {};
-  //           for (Journal journal in listJournal) {
-  //             database[journal.id] = journal;
-              
-  //           }
-  //         });
-  //       });
-        
-  //     } else {
-  //       Navigator.pushReplacementNamed(context, "login");
-  //     }
-  //   });
-    
-  // }
-
-  // logout(){
-  //   SharedPreferences.getInstance().then((prefs) {
-  //     prefs.clear();
-  //     Navigator.pushReplacementNamed(context, "login");
-  //   });
-  // }
 }

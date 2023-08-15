@@ -86,9 +86,5 @@ class AddJournalScreen extends StatelessWidget {
         }
       }
     });
-
-    
-
-    
   }
 }

@@ -20,9 +20,7 @@ Future<bool> verifyToken() async{
     }
     return false;
   }
-
-// json-server --watch --host 192.168.0.3 db.json
-// json-server-auth --watch --host 192.168.0.2 db.json
+  
 // json-server-auth --watch --host 192.168.1.184 db.json      //192.168.0.6 db.json  192.168.0.2 192.168.1.184
 
 class MyApp extends StatelessWidget {
