@@ -14,19 +14,17 @@
       "email": "jovitorthomaz@gmail.com",
       "password": "$2a$10$BHKuIMwuWqUtSykfJNE1W.vKBJF1nlXh3iAJYeAx2mxFXEMIIukYu",
       "id": 3
+    },
+    {
+      "email": "josevitor2@gmail.com",
+      "password": "$2a$10$5yxa8k2sdrqdR5nsJNKqf.etuK9rT05F2KBy8KsZ5ARd3DRlC31TK",
+      "id": 4
     }
   ],
   "leanhttp": {
     "content": "Olá Mundo"
   },
   "journals": [
-    {
-      "id": "6c86d570-26a1-11ee-b762-253f757a2de2",
-      "content": "entrada domingo, dia 09",
-      "created_at": "2023-07-09 23:02:01.610658",
-      "updated_at": "2023-07-09 23:02:01.610658",
-      "userId": 1
-    },
     {
       "id": "c7de7860-26a1-11ee-8fef-eb093c5f82fa",
       "content": "Entrada segunda, dia 10.",
@@ -42,18 +40,18 @@
       "userId": 3
     },
     {
-      "id": "0db81ba0-2c1c-11ee-aef9-cd7c64075778",
-      "content": "Entrada Quarta-feira, dia 26/07",
-      "created_at": "2023-07-26 22:20:30.546816",
-      "updated_at": "2023-07-26 22:20:30.546816",
+      "id": "ea6a09e0-3785-11ee-9df2-bfc34e5e687f",
+      "content": "hoje é quinta feira",
+      "created_at": "2023-08-10 10:43:37.689077",
+      "updated_at": "2023-08-10 10:43:37.689077",
       "userId": 4
     },
     {
-      "id": "1aad5e60-2c1c-11ee-aef9-cd7c64075778",
-      "content": "Entrada terça-feira",
-      "created_at": "2023-07-25 22:20:30.546816",
-      "updated_at": "2023-07-25 22:20:30.546816",
-      "userId": 5
+      "id": "e4a7b820-3b0b-11ee-952d-b5f89977b998",
+      "content": "entrada de domingo atrasada com correção",
+      "created_at": "2023-08-13 22:34:31.368963",
+      "updated_at": "2023-08-14 22:35:15.761877",
+      "userId": 1
     }
   ]
 }
